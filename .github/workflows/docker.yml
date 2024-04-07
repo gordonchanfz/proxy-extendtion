@@ -5,7 +5,7 @@ on:
     types: [created]
 
 env:
-  DOCKER_IMAGE_NAME: missuo/freegpt35
+  DOCKER_IMAGE_NAME: gordonchanfz/gpt-bot
   GHCR_IMAGE_NAME: ${{ github.repository }}
   GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   GHCR_USERNAME: ${{ github.repository_owner }}
@@ -42,7 +42,6 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            docker.io/${{ env.DOCKER_IMAGE_NAME }}
             ghcr.io/${{ env.GHCR_IMAGE_NAME }}
           tags: |
             type=ref,event=tag
